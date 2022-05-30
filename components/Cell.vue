@@ -10,44 +10,42 @@
     const emit = defineEmits(['selected','deselected'])
 
     function selectOnHover(){
-        if(props.selectable && props.mode==0){
+        if(props.selectable){
             emit("selected")
         }
     }
     function selectOnClick(){
-        if(props.mode==0)
-            emit("selected")
+        emit("selected")
     }
     function deSelectOnHover(){
-        if(props.selectable && props.mode==1){
+        if(props.selectable){
             emit("deselected")
         }
+
     }
     function deSelectOnClick(){
-        if(props.mode==1)
-            emit("deselected")
+        emit("deselected")
     }
 </script>
 
 <template>  
-    <div class="active-cell" v-if="isActive" :class="{path_cell: isOnPath, draw_mode: mode==0}" 
+    <div v-if="isActive && mode != 0" class="active-cell" :class="{path_cell: isOnPath}" >
+    </div>
+
+    <div v-else-if="isActive && mode == 0" class="active-cell draw_mode" :class="{path_cell: isOnPath}" 
         v-on:mouseover="selectOnHover" 
         v-on:mousedown="selectOnClick">
     </div>
 
-    <div v-else class="cell" :class="{erase_mode: mode==1}"  
+    <div v-else-if="mode!=1" class="cell" ></div>
+
+    <div v-else-if="mode==1" class="cell erase_mode"  
         v-on:mouseover="deSelectOnHover" 
         v-on:mousedown="deSelectOnClick"
     ></div>
 </template>
 
 <style scoped>
-.cell{
-    background-color: rgb(246, 168, 66);
-    border-radius: 5px;
-    transform: scale(1.02);
-}
-
 .erase_mode{
     cursor: pointer;
     transition-duration: 150ms;
@@ -56,18 +54,27 @@
     cursor: cell;
     transition-duration: 150ms;
 }
+
+
+@media (hover: hover) {
+    .draw_mode:hover{
+        border-radius: 5px;
+        background: rgb(246, 168, 66);
+    }
+    .erase_mode:hover{
+        background: antiquewhite;
+    }
+}
+
 .active-cell{
     border-radius: 2px;
     background-color: antiquewhite;
 }
 
-.draw_mode:hover{
-    border-radius: 5px;
+.cell{
     background-color: rgb(246, 168, 66);
-}
-
-.erase_mode:hover{
-    background-color: antiquewhite;
+    border-radius: 5px;
+    transform: scale(1.02);
 }
 
 .path_cell{
