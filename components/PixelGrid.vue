@@ -2,7 +2,6 @@
     import { ref, onMounted,computed } from 'vue'
     import {hashedCoordinate} from "../lib/coordinateTools"
     import {CellInterface, Coordinate} from "../lib/publicInterfaces"
-    import dfs from "../lib/depthFirstSearch"
     import aStartSearch from "../lib/aStarSearch"
 
 
@@ -123,12 +122,16 @@
         :isActive="c.active" 
         :selectable="mouseDown"
         :mode="drawing_mode"
-        @selected="()=>deActivateCell(c.pos.x, c.pos.y)" @deselected="activateCell(c.pos.x, c.pos.y)"/>
+        @selected="()=>deActivateCell(c.pos.x, c.pos.y)" @deselected="activateCell(c.pos.x, c.pos.y)"
+        />
+
+        <Notifications :paused="paused"/>
     </div>
 </template>
 
 <style scoped>
     .container{
+        position: relative;
         box-sizing: border-box;
         background-color: rgb(105, 101, 139);
         height: 100%;
@@ -140,6 +143,5 @@
         grid-template-columns: repeat(20,auto);
         gap: 4px;
     }
-
     
 </style>
