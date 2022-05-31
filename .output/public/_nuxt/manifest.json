@@ -1,0 +1,18 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "entry-5644773a.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "css": [
+      "entry.2004eb99.css"
+    ],
+    "assets": [
+      "eraser.18690e12.png",
+      "refresh.557fd1c2.svg",
+      "pause.af643dd9.svg",
+      "play.1f01d254.svg",
+      "start.850ef3ca.png",
+      "finish.185ac7bd.png"
+    ]
+  }
+}

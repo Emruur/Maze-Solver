@@ -30,8 +30,8 @@
     :class="{selected: startIndex==v ,not_selected: startIndex!=v}" 
     v-for="v of slots_array" 
     :key="v">
-        <img  v-if="startIndex==v && type" src="../assets/start.png" alt="">
-        <img  v-if="startIndex==v && !type" src="../assets/finish.png" class="start" alt="">
+        <img  v-if="startIndex==v && type" src="~/assets/start.png" alt="">
+        <img  v-if="startIndex==v && !type" src="~/assets/finish.png" class="start" alt="">
     </div> 
 </div>    
 </template>
