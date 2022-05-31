@@ -21,7 +21,6 @@
         if(props.selectable){
             emit("deselected")
         }
-
     }
     function deSelectOnClick(){
         emit("deselected")

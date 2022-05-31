@@ -4,6 +4,14 @@
     import {CellInterface, Coordinate} from "../lib/publicInterfaces"
     import aStartSearch from "../lib/aStarSearch"
 
+    function copyCell(a: CellInterface): CellInterface{
+            return {
+                pos:{x:a.pos.x, y: a.pos.y},
+                active: a.active,
+                id: a.id,
+                onPath: a.onPath,
+            }
+        }
 
     const props = defineProps({
         size: Number,
@@ -16,20 +24,10 @@
 
     const emit = defineEmits(['doneReloading'])
 
-
-
-    function copyCell(a: CellInterface): CellInterface{
-        return {
-            pos:{x:a.pos.x, y: a.pos.y},
-            active: a.active,
-            id: a.id,
-            onPath: a.onPath,
-        }
-    }
-    
     const cellMatrix= ref(Array<Array<CellInterface>>())
-
     const pathDFS= ref(new Set<number>())
+    const no_path= ref(false)
+
 
     watch([cellMatrix,props],
         ([cellMatrix,props], [prevCellMatrix, prevProps])=>{
@@ -38,7 +36,13 @@
 
             let path= new Set<number>()
             if(!props.paused){
+
                 path= aStartSearch(mazeStart, mazeEnd, cellMatrix)
+
+                if(path.size == 0)
+                    no_path.value = true
+                else
+                    no_path.value= false
             }
             pathDFS.value= path
         },
@@ -125,7 +129,7 @@
         @selected="()=>deActivateCell(c.pos.x, c.pos.y)" @deselected="activateCell(c.pos.x, c.pos.y)"
         />
 
-        <Notifications :paused="paused"/>
+        <Notifications :paused="paused" :no_path="no_path"/>
     </div>
 </template>
 
@@ -143,5 +147,4 @@
         grid-template-columns: repeat(20,auto);
         gap: 4px;
     }
-    
 </style>

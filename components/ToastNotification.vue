@@ -23,11 +23,10 @@
         left: 0;
         right: 0;
         bottom: -3rem;
-        width: 12rem;
+        width: 14rem;
         border-radius: 0.7rem;
         padding: 0.3rem;
         text-align: center;
-
         border: 3px solid rgba(123, 98, 98, 0.859);
     }
 
@@ -36,7 +35,7 @@
     }
 
     .info{
-        background-color: rgb(197, 220, 200);
+        background-color: antiquewhite
     }
 </style>
 

@@ -2,15 +2,20 @@
     import { defineProps } from 'vue';
 
     const props= defineProps({
-        paused: Boolean
+        paused: Boolean,
+        no_path: Boolean
     })
 </script>
 
 <template>
    <Transition name="toast">
         <ToastNotification :type="'info'" v-if="paused">
-            Path finding is paused
+            Path finding is paused...
         </ToastNotification>
+        <ToastNotification :type="'alert'" v-else-if="no_path">
+            No path found!
+        </ToastNotification>
+
     </Transition>  
 </template>
 

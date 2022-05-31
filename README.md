@@ -1,5 +1,7 @@
 # Maze Builder & Solver
 
+Provides a simple canvas to build custom mazes on a grid. Grid is then solved in realtime using A* search algorithm
+
 ## Setup
 
 Install the dependencies:
@@ -22,6 +24,4 @@ Start the development server on http://localhost:3000
 ```bash
 npm run dev
 ```
-
-safari error
 

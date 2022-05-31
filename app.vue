@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 	const size= ref(20)
 	const start_index= ref(size.value/2)
 	const end_index= ref(size.value/2)
@@ -67,5 +68,7 @@
 }
 body {
 	margin: 0;
+	font-family: "Lucida Console", "Courier New", monospace;
+	font-size: small
 }
 </style>
