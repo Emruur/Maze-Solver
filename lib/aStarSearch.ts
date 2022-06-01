@@ -1,4 +1,4 @@
-import { addCoordinates, coordinatesEqual, hashCoordinate, hashedCoordinate, outOfBounds } from "./coordinateTools";
+import { addCoordinates, coordinatesEqual, hashCoordinate, outOfBounds } from "./coordinateTools";
 import { generateBinaryMatrix } from "./mazeTools";
 import { CellInterface, Coordinate } from "./publicInterfaces";
 
