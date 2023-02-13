@@ -7,6 +7,9 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.1",
+    "firebase-functions-test": "^3.0.0",
     "nuxt": "3.0.0-rc.3"
   }
 }

@@ -157,12 +157,12 @@ let slides = ref([
     {
         title: "Hi, welcome to maze solver",
         description: "Here you can draw mazes and see to optimum path in real time.",
-        path: "assets/tut1.gif"
+        path: "../assets/tut1.gif"
     },
     {
         title: "Pause & Draw",
         description: "Pause and draw the maze. Then continue solving to see how it is solved",
-        path: "assets/tut2.gif"
+        path: "../assets/tut2.gif"
     },
 ])
 
