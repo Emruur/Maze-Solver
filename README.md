@@ -1,5 +1,8 @@
 # Maze Builder & Solver
 
+![Alt Text](assets/tut1.gif)
+![Alt Text](assets/tut2.gif)
+
 Provides a simple canvas to build custom mazes on a grid. Grid is then solved in realtime using A* search algorithm
 
 ## Setup
